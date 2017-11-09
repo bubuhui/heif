@@ -75,12 +75,6 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
     set(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS} /Za")
 endif()
 
-# add gdb debug
-SET(CMAKE_BUILD_TYPE "Debug")
-SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g2 -ggdb")
-SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
-
-
 # Add sub-directories that contain sources
 add_subdirectory(${PROJECT_SOURCE_DIR}/Srcs)
 
