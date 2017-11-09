@@ -1013,8 +1013,10 @@ void HevcImageFileReader::readStream()
     bool ftypFound = false;
     bool metaFound = false;
     bool moovFound = false;
-
-    const int compatibilityVersion = readCompatibilityVersion();
+	
+	//这里如果先读取了流，则会导致后面读不到流，看了下，这一步没大用处，先注释掉算了。
+    //const int compatibilityVersion = readCompatibilityVersion();
+	const int compatibilityVersion = 0;
     if (compatibilityVersion == 0)
     {
         logInfo() << "NHW compatibility version not found." << std::endl;
